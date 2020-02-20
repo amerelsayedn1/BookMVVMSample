@@ -24,6 +24,16 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding>(private va
         ViewModelProvider(this).get(mViewModelClass)
     }
 
+    /** handle back press*/
+    override fun onSupportNavigateUp(): Boolean {
+
+        if (enableBack){
+            onBackPressed()
+        }
+
+        return true
+    }
+
     val binding by lazy {
         DataBindingUtil.setContentView(this, layoutResId) as DB
     }

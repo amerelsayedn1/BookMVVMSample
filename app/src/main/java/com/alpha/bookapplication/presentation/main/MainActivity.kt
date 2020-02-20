@@ -49,6 +49,7 @@ class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>(
     private fun getAllDoctors() {
         viewModel.getAllDoctors().observe(this, Observer {
             it?.let { categoryAdapter.updateItems(it) }
+            binding.progress.visibility=View.GONE
         })
     }
 

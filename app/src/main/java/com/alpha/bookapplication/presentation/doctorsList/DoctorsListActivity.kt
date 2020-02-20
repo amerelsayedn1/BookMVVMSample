@@ -3,6 +3,7 @@ package com.alpha.bookapplication.presentation.doctorsList
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -55,6 +56,8 @@ class DoctorsListActivity : BaseActivity<MainActivityViewModel, ActivityDoctorsB
     private fun getAllDoctors() {
         viewModel.getAllDoctors().observe(this, Observer {
             it?.let { sliderAdapter.updateItems(it) }
+            binding.progress.visibility= View.GONE
+
         })
     }
 }
