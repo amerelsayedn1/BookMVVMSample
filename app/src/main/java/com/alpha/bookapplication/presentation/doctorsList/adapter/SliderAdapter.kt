@@ -1,16 +1,15 @@
-package com.alpha.bookapplication.presentation.main.adapter
+package com.alpha.bookapplication.presentation.doctorsList.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alpha.bookapplication.core.BaseAdapter
 import com.alpha.bookapplication.core.BaseViewHolder
 import com.alpha.bookapplication.data.model.Doctors
 import com.alpha.bookapplication.databinding.ItemCategoryBinding
+import com.alpha.bookapplication.databinding.ItemDoctorsSliderBinding
 
-class CategoriesHomeAdapter(private val data: ArrayList<Doctors>) : BaseAdapter<Doctors>(data) {
+class SliderAdapter(private val data: ArrayList<Doctors>) : BaseAdapter<Doctors>(data) {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         holder as CategoryViewHolder
@@ -20,7 +19,7 @@ class CategoriesHomeAdapter(private val data: ArrayList<Doctors>) : BaseAdapter<
 
     override fun rowBinding(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return CategoryViewHolder(
-            ItemCategoryBinding.inflate(
+            ItemDoctorsSliderBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -28,17 +27,14 @@ class CategoriesHomeAdapter(private val data: ArrayList<Doctors>) : BaseAdapter<
         )
     }
 
-    inner class CategoryViewHolder(private val item: ItemCategoryBinding) :
+    inner class CategoryViewHolder(private val item: ItemDoctorsSliderBinding) :
         BaseViewHolder<Doctors>(item) {
 
         override fun bind(data: Doctors) {
             item.model = data
             item.position = adapterPosition
-            item.itemClick=onItemClicked
         }
     }
-
-
 
 
 }

@@ -12,6 +12,5 @@ data class Doctors(
     val employeeSalary: String,
     @SerializedName("employee_age")
     val employeeAge: String,
-    @SerializedName("profile_image")
-    val profileImage: String
+    val profile: String="https://amayei.nyc3.digitaloceanspaces.com/2019/09/Heart-Disease.jpeg"
 )

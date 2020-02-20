@@ -1,17 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="model"
+            type="com.alpha.bookapplication.data.model.Doctors" />
+
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="itemClick"
+            type="com.alpha.bookapplication.core.BaseAdapter.OnItemClickedListener" />
+
+        <import type="android.view.View" />
     </data>
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/colorPrimaryDark"
-        android:orientation="vertical">
+        android:layout_height="150dp"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="35dp">
 
-    </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="@{(view) -> itemClick.onItemClickListener(view,model)}">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/puma"
+                bind:src="https://miro.medium.com/max/1200/1*09zn4xwEeADS3c4V5QUiRA.png" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 </layout>
