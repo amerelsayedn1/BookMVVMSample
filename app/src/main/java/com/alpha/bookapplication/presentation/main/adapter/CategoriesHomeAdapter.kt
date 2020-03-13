@@ -1,8 +1,6 @@
 package com.alpha.bookapplication.presentation.main.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alpha.bookapplication.core.BaseAdapter
@@ -34,11 +32,9 @@ class CategoriesHomeAdapter(private val data: ArrayList<Doctors>) : BaseAdapter<
         override fun bind(data: Doctors) {
             item.model = data
             item.position = adapterPosition
-            item.itemClick=onItemClicked
+            item.itemClick = onItemClicked
         }
     }
-
-
 
 
 }

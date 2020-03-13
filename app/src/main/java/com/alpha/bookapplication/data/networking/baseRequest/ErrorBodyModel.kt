@@ -1,4 +1,4 @@
-package com.alpha.lazza.data.network.baseRequest
+package com.alpha.bookapplication.data.networking.baseRequest
 
 import com.google.gson.annotations.SerializedName
 

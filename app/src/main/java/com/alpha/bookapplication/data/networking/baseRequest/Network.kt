@@ -1,7 +1,6 @@
 package com.alpha.bookapplication.data.networking.baseRequest
 
 import android.util.Log
-import com.alpha.lazza.data.network.baseRequest.ErrorBodyModel
 import com.google.gson.Gson
 import kotlinx.coroutines.*
 import retrofit2.Response
@@ -72,27 +71,6 @@ object Network {
                 e.message.toString()
         }
     }
-
-
-    /*  private fun <T : Any> verifyResponse(response: Response<T>): HandleResult<T> {
-
-          return try {
-              val isResponseSuccessful = response.isSuccessful
-              val statusCode = response.code()
-              val responseBody = response.body()
-              val rawMessage = response.raw().message
-              val errorBodyMessage = response.errorBody()?.string()
-
-              if (isResponseSuccessful) {
-                  HandleResult.Success(responseBody!!)
-              } else {
-                  val errorBody = Gson().fromJson(errorBodyMessage, ErrorBodyModel::class.java)
-                  HandleResult.Failure(errorBody)
-              }
-          } catch (ex: Exception) {
-              HandleResult.Failure(ErrorBodyModel(message = ex.message!!))
-          }
-      }*/
 
 
 }
